@@ -1,10 +1,10 @@
 import "./App.scss";
-import Digit from "./components/Digit/Digit";
+import Display from "./components/Display/Display";
 
 function App() {
   return (
     <div className="App">
-      <Digit />
+      <Display digitsString={"10:00"} />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import "./Digit.scss";
 
-export default function Digit() {
+export default function Digit({digit}) {
   return (
-    <div class="display-digit display-digit-9">
+    <div class={`display-digit display-digit-${digit}`}>
       <div class="display-digit-bar display-digit-bar-top"></div>
       <div class="display-digit-bar display-digit-bar-top-left"></div>
       <div class="display-digit-bar display-digit-bar-top-right"></div>
