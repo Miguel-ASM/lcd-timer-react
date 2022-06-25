@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .display-digit {
+        width: 125px;
+        height: 250px;
+        background-color: grey;
+        position: relative;
+      }
+      .display-digit-bar {
+        background: black;
+        position: absolute;
+      }
+      .display-digit-bar-top {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110px;
+        height: 10px;
+      }
+      .display-digit-bar-top-left {
+        top: 33.33%;
+        left: 0;
+        transform: translate(-50%, -66.66%);
+        width: 10px;
+        height: 110px;
+      }
+      .display-digit-bar-top-right {
+        top: 33.33%;
+        right: 0;
+        transform: translate(50%, -66.66%);
+        width: 10px;
+        height: 110px;
+      }
+      .display-digit-bar-middle {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110px;
+        height: 10px;
+      }
+      .display-digit-bar-bottom-left {
+        top: 66.66%;
+        left: 0;
+        transform: translate(-50%, -33.33%);
+        width: 10px;
+        height: 110px;
+      }
+      .display-digit-bar-bottom-right {
+        bottom: 33.33%;
+        right: 0;
+        transform: translate(50%, 66.66%);
+        width: 10px;
+        height: 110px;
+      }
+      .display-digit-bar-bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 110px;
+        height: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="display-digit">
+      <div class="display-digit-bar display-digit-bar-top"></div>
+      <div class="display-digit-bar display-digit-bar-top-left"></div>
+      <div class="display-digit-bar display-digit-bar-top-right"></div>
+      <div class="display-digit-bar display-digit-bar-middle"></div>
+      <div class="display-digit-bar display-digit-bar-bottom-left"></div>
+      <div class="display-digit-bar display-digit-bar-bottom-right"></div>
+      <div class="display-digit-bar display-digit-bar-bottom"></div>
+    </div>
+  </body>
+</html>

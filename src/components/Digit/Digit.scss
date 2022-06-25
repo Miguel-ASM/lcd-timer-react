@@ -1,0 +1,158 @@
+.display-digit {
+  width: 125px;
+  height: 250px;
+  background-color: black;
+  position: relative;
+
+  &-0 {
+    .display-digit-bar-top,
+    .display-digit-bar-bottom,
+    .display-digit-bar-top-left,
+    .display-digit-bar-top-right,
+    .display-digit-bar-bottom-left,
+    .display-digit-bar-bottom-right {
+      background: red;
+    }
+  }
+
+  &-1 {
+    .display-digit-bar-top-right,
+    .display-digit-bar-bottom-right {
+      background: red;
+    }
+  }
+
+  &-2 {
+    .display-digit-bar-top,
+    .display-digit-bar-top-right,
+    .display-digit-bar-middle,
+    .display-digit-bar-bottom-left,
+    .display-digit-bar-bottom {
+      background: red;
+    }
+  }
+
+  &-3 {
+    .display-digit-bar-top,
+    .display-digit-bar-top-right,
+    .display-digit-bar-middle,
+    .display-digit-bar-bottom-right,
+    .display-digit-bar-bottom {
+      background: red;
+    }
+  }
+
+  &-4 {
+    .display-digit-bar-top-left,
+    .display-digit-bar-top-right,
+    .display-digit-bar-middle,
+    .display-digit-bar-bottom-right {
+      background: red;
+    }
+  }
+
+  &-5 {
+    .display-digit-bar-top,
+    .display-digit-bar-top-left,
+    .display-digit-bar-middle,
+    .display-digit-bar-bottom-right,
+    .display-digit-bar-bottom {
+      background: red;
+    }
+  }
+
+  &-6 {
+    .display-digit-bar-top,
+    .display-digit-bar-top-left,
+    .display-digit-bar-middle,
+    .display-digit-bar-bottom-left,
+    .display-digit-bar-bottom-right,
+    .display-digit-bar-bottom {
+      background: red;
+    }
+  }
+
+  &-7 {
+    .display-digit-bar-top,
+    .display-digit-bar-top-right,
+    .display-digit-bar-bottom-right {
+      background: red;
+    }
+  }
+
+  &-8 {
+    .display-digit-bar-top,
+    .display-digit-bar-bottom,
+    .display-digit-bar-top-left,
+    .display-digit-bar-top-right,
+    .display-digit-bar-middle,
+    .display-digit-bar-bottom-left,
+    .display-digit-bar-bottom-right {
+      background: red;
+    }
+  }
+
+  &-9 {
+    .display-digit-bar-top,
+    .display-digit-bar-top-left,
+    .display-digit-bar-top-right,
+    .display-digit-bar-middle,
+    .display-digit-bar-bottom-right {
+      background: red;
+    }
+  }
+}
+
+.display-digit-bar {
+  position: absolute;
+
+  &-top-left,
+  &-top-right,
+  &-bottom-left,
+  &-bottom-right {
+    width: 10px;
+    height: 100px;
+  }
+
+  &-top,
+  &-middle,
+  &-bottom {
+    width: 100px;
+    height: 10px;
+  }
+  &-top {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  &-top-left {
+    top: 33.33%;
+    left: 0;
+    transform: translate(0, -66.66%);
+  }
+  &-top-right {
+    top: 33.33%;
+    right: 0;
+    transform: translate(0, -66.66%);
+  }
+  &-middle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &-bottom-left {
+    top: 66.66%;
+    left: 0;
+    transform: translate(0, -33.33%);
+  }
+  &-bottom-right {
+    bottom: 33.33%;
+    right: 0;
+    transform: translate(0, 66.66%);
+  }
+  &-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
