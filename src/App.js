@@ -32,15 +32,27 @@ function App() {
 
   return (
     <div className="App">
-      <Display digitsString={secondsToDisplayString(seconds)} />
-      <Button type="primary" onClick={toggleIsRunnning}>
-        {timerRunning ? "PAUSE" : seconds === 0 ? "START" : "RESUME"}
-      </Button>
-      {!timerRunning && (
-        <Button type="primary" onClick={resetTimer}>
-          RESET
-        </Button>
-      )}
+      <div className="timer">
+        <Display digitsString={secondsToDisplayString(seconds)} />
+        <div className="timer_buttons">
+          {!timerRunning && (
+            <Button
+              className="timer_buttons_button"
+              type="secondary"
+              onClick={resetTimer}
+            >
+              RESET
+            </Button>
+          )}
+          <Button
+            className="timer_buttons_button"
+            type="primary"
+            onClick={toggleIsRunnning}
+          >
+            {timerRunning ? "PAUSE" : seconds === 0 ? "START" : "RESUME"}
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
