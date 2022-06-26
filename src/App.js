@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Button } from "antd";
+import { Button, Table } from "antd";
 import Display from "./components/Display/Display";
 import { centiSecondsToDisplayString } from "./helpers/helpers";
 import { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ function App() {
   const [centiSeconds, setCentiSeconds] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [runningTimeOut, setRunningTimeOut] = useState(null);
+  const [laps, setLaps] = useState([]);
 
   useEffect(() => {
     if (timerRunning) {
@@ -28,6 +29,11 @@ function App() {
   const resetTimer = () => {
     setCentiSeconds(0);
     setTimerRunning(false);
+    setLaps([]);
+  };
+
+  const addLap = () => {
+    setLaps((laps) => [...laps, centiSecondsToDisplayString(centiSeconds)]);
   };
 
   return (
@@ -35,7 +41,15 @@ function App() {
       <div className="timer">
         <Display digitsString={centiSecondsToDisplayString(centiSeconds)} />
         <div className="timer_buttons">
-          {!timerRunning && (
+          {timerRunning ? (
+            <Button
+              className="timer_buttons_button"
+              type="primary"
+              onClick={addLap}
+            >
+              LAP
+            </Button>
+          ) : (
             <Button
               className="timer_buttons_button"
               type="secondary"
@@ -53,6 +67,7 @@ function App() {
           </Button>
         </div>
       </div>
+      <Table></Table>
     </div>
   );
 }
