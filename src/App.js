@@ -7,21 +7,21 @@ import Laps from "./components/Laps/Laps";
 
 function App() {
   const [centiSeconds, setCentiSeconds] = useState(0);
+  const [lapTime, setLapTime] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [runningTimeOut, setRunningTimeOut] = useState(null);
   const [laps, setLaps] = useState([]);
-  const [lapTime, setLapTime] = useState(0);
 
   useEffect(() => {
     if (timerRunning) {
-      const newTimeOut = setTimeout(() => {
-        setCentiSeconds((centiSeconds) => {
-          return centiSeconds + 1;
+      const newTimeOut = setInterval(() => {
+        setCentiSeconds((prev) => {
+          return prev + 1;
         });
       }, 10);
       setRunningTimeOut(newTimeOut);
     }
-  }, [centiSeconds, timerRunning]);
+  }, [timerRunning]);
 
   const toggleIsRunnning = () => {
     if (timerRunning) clearTimeout(runningTimeOut);
@@ -32,6 +32,7 @@ function App() {
     setCentiSeconds(0);
     setTimerRunning(false);
     setLaps([]);
+    setLapTime(0);
   };
 
   const addLap = () => {
