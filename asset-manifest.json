@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/lcd-timer-react/static/css/main.cd57b643.css",
-    "main.js": "/lcd-timer-react/static/js/main.3fec3280.js",
+    "main.css": "/lcd-timer-react/static/css/main.018278a4.css",
+    "main.js": "/lcd-timer-react/static/js/main.1a27dc16.js",
     "static/js/787.28338921.chunk.js": "/lcd-timer-react/static/js/787.28338921.chunk.js",
     "index.html": "/lcd-timer-react/index.html",
-    "main.cd57b643.css.map": "/lcd-timer-react/static/css/main.cd57b643.css.map",
-    "main.3fec3280.js.map": "/lcd-timer-react/static/js/main.3fec3280.js.map",
+    "main.018278a4.css.map": "/lcd-timer-react/static/css/main.018278a4.css.map",
+    "main.1a27dc16.js.map": "/lcd-timer-react/static/js/main.1a27dc16.js.map",
     "787.28338921.chunk.js.map": "/lcd-timer-react/static/js/787.28338921.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd57b643.css",
-    "static/js/main.3fec3280.js"
+    "static/css/main.018278a4.css",
+    "static/js/main.1a27dc16.js"
   ]
 }
