@@ -1,14 +1,16 @@
 import "./App.scss";
-import { Button, Table } from "antd";
+import { Button } from "antd";
 import Display from "./components/Display/Display";
 import { centiSecondsToDisplayString } from "./helpers/helpers";
 import { useEffect, useState } from "react";
+import Laps from "./components/Laps/Laps";
 
 function App() {
   const [centiSeconds, setCentiSeconds] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [runningTimeOut, setRunningTimeOut] = useState(null);
   const [laps, setLaps] = useState([]);
+  const [lapTime, setLapTime] = useState(0);
 
   useEffect(() => {
     if (timerRunning) {
@@ -33,7 +35,11 @@ function App() {
   };
 
   const addLap = () => {
-    setLaps((laps) => [...laps, centiSecondsToDisplayString(centiSeconds)]);
+    setLaps((laps) => {
+      const newLap = centiSeconds - lapTime;
+      return [...laps, newLap];
+    });
+    setLapTime(centiSeconds);
   };
 
   return (
@@ -67,7 +73,7 @@ function App() {
           </Button>
         </div>
       </div>
-      <Table></Table>
+      {laps.length > 0 && <Laps laps={laps} />}
     </div>
   );
 }
