@@ -1,36 +1,20 @@
 import "./App.scss";
+
 import { Button } from "antd";
+import { useState } from "react";
+
 import Display from "./components/Display/Display";
 import { centiSecondsToDisplayString } from "./helpers/helpers";
-import { useEffect, useState } from "react";
+import { useTimer } from "./hooks/useTimer";
 import Laps from "./components/Laps/Laps";
 
 function App() {
-  const [centiSeconds, setCentiSeconds] = useState(0);
   const [lapTime, setLapTime] = useState(0);
-  const [timerRunning, setTimerRunning] = useState(false);
-  const [runningTimeOut, setRunningTimeOut] = useState(null);
   const [laps, setLaps] = useState([]);
-
-  useEffect(() => {
-    if (timerRunning) {
-      const newTimeOut = setInterval(() => {
-        setCentiSeconds((prev) => {
-          return prev + 1;
-        });
-      }, 10);
-      setRunningTimeOut(newTimeOut);
-    }
-  }, [timerRunning]);
-
-  const toggleIsRunnning = () => {
-    if (timerRunning) clearTimeout(runningTimeOut);
-    setTimerRunning((x) => !x);
-  };
+  const { centiSeconds, timerRunning, toggleIsRunnning, reset } = useTimer();
 
   const resetTimer = () => {
-    setCentiSeconds(0);
-    setTimerRunning(false);
+    reset();
     setLaps([]);
     setLapTime(0);
   };
