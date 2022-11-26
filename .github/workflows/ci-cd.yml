@@ -31,3 +31,4 @@ jobs:
           user_email: "github-actions[bot]@users.noreply.github.com"
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           repository: ${{ github.repository }}
+          REACT_APP_GOOGLE_SITE_VERIFICATION: ${{ secrets.REACT_APP_GOOGLE_SITE_VERIFICATION }}
